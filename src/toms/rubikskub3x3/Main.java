@@ -52,6 +52,7 @@ public class Main {
         s2[11] = "1 3 3 1";
 
         användarKub = blandaKuben(s1, s2);
+        användarKub = Algoritmer.lösFörstaHörnet(användarKub);
         skrivaUtKuben(användarKub);
 
 

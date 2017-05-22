@@ -7,6 +7,7 @@ public class Kub2 {
     private Kubsida[] orientering = new Kubsida[6];
     private Hörn2[] hörn = new Hörn2[8];
     private Kant2[] kant = new Kant2[12];
+    private int antalVridningar = 0;
 
     private int[][] posListaHörn = new int[4][3];
     private int[][] posListaKant = new int[4][2];
@@ -857,7 +858,8 @@ public class Kub2 {
                 }
             }
         }
-        System.out.println(vridning.getKortKod());
+        antalVridningar++;
+        System.out.println(antalVridningar + ". " + vridning.getKortKod());
         return this;
     }
 }

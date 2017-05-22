@@ -5,24 +5,29 @@ public class Main {
     public static void main(String[] args) {
         Kub2 användarKub = new Kub2();
 
+        //Felaktig blandning, Två hörn blir fel
+        //Jag vet dock inte vilken bit som är fel,
+        //tror jag skrev dit något värde felaktigt
+        //av misstag
+
         String[] s1 = new String[8];
 
         // position 124
-        s1[0] = "1 4 5 4 5 1";
+        s1[0] = "3 5 6 3 5 6";
         // position 145
-        s1[1] = "1 2 4 4 1 2";
+        s1[1] = "1 2 3 3 2 1";
         // position 135
-        s1[2] = "2 3 6 3 2 6";
+        s1[2] = "4 5 6 4 5 6";
         // position 123
-        s1[3] = "4 5 6 4 5 6";
+        s1[3] = "1 2 4 1 4 2";
         // position 456
-        s1[4] = "3 5 6 3 6 5";
+        s1[4] = "2 3 6 3 2 6";
         // position 246
-        s1[5] = "1 3 5 3 5 1";
+        s1[5] = "1 4 5 1 5 4";
         // position 236
-        s1[6] = "2 4 6 4 2 6";
+        s1[6] = "1 3 5 5 3 1";
         // position 356
-        s1[7] = "1 2 3 3 2 1";
+        s1[7] = "2 4 6 2 6 4";
 
         String[] s2 = new String[12];
 
@@ -51,8 +56,85 @@ public class Main {
         // position 36
         s2[11] = "1 3 3 1";
 
+        //Korrekt blandning
+
+//        String[] s1 = new String[8];
+//
+//        // position 124
+//        s1[0] = "2 4 6 2 6 4";
+//        // position 145
+//        s1[1] = "3 5 6 5 6 3";
+//        // position 135
+//        s1[2] = "1 3 5 5 1 3";
+//        // position 123
+//        s1[3] = "2 3 6 3 2 6";
+//        // position 456
+//        s1[4] = "1 2 3 2 3 1";
+//        // position 246
+//        s1[5] = "1 4 5 4 1 5";
+//        // position 236
+//        s1[6] = "1 2 4 2 4 1";
+//        // position 356
+//        s1[7] = "4 5 6 5 4 6";
+//
+//        String[] s2 = new String[12];
+//
+//        // position 12
+//        s2[0] = "3 6 3 6";
+//        // position 14
+//        s2[1] = "1 3 3 1";
+//        // position 15
+//        s2[2] = "1 5 5 1";
+//        // position 13
+//        s2[3] = "4 6 4 6";
+//        // position 23
+//        s2[4] = "3 5 5 3";
+//        // position 35
+//        s2[5] = "2 4 2 4";
+//        // position 45
+//        s2[6] = "5 6 5 6";
+//        // position 24
+//        s2[7] = "1 2 2 1";
+//        // position 56
+//        s2[8] = "2 6 2 6";
+//        // position 46
+//        s2[9] = "1 4 1 4";
+//        // position 26
+//        s2[10] = "4 5 5 4";
+//        // position 36
+//        s2[11] = "2 3 3 2";
+
         användarKub = blandaKuben(s1, s2);
         användarKub = Algoritmer.lösFörstaHörnet(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösAndraHörnet(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösTredjeHörnet(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösFjärdeHörnet(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösFörstaKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösAndraKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösTredjeKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösFjärdeKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösFemteKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösSjätteKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösSjundeKanten(användarKub);
+        System.out.println();
+        användarKub = Algoritmer.lösÅttondeKanten(användarKub);
+        användarKub = Algoritmer.lösKanterSistaLagret(användarKub);
+
+        try {
+            användarKub = Algoritmer.lösHörnenSistaLagret(användarKub);
+        }catch(FelaktigBlandningHörnException e) {
+            System.out.println(e.getMessage());
+        }
         skrivaUtKuben(användarKub);
 
 

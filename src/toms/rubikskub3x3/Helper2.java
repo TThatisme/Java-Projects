@@ -64,7 +64,7 @@ public class Helper2 {
         return lista;
     }
 
-    public static Hörn2 hittaHörnPos(Hörn2[] hörn, int[] nummer) {
+    public static Hörn2 hittaHörn(Hörn2[] hörn, int[] nummer) {
             for(int j = 0; j < 8; j++){
                 if(nummer[0] == hörn[j].getNummer()[0] & nummer[1] == hörn[j].getNummer()[1]
                         & nummer[2] == hörn[j].getNummer()[2])
@@ -73,7 +73,7 @@ public class Helper2 {
             return null;
     }
 
-    public static Kant2 hittaKantPos(Kant2[] kant, int[] nummer) {
+    public static Kant2 hittaKant(Kant2[] kant, int[] nummer) {
         for(int j = 0; j < 12; j++){
             if(nummer[0] == kant[j].getNummer()[0] & nummer[1] == kant[j].getNummer()[1])
                 return kant[j];
